@@ -32,14 +32,14 @@ function Index() {
         <div className="container relative mx-auto px-4 py-24 md:py-36 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <span className="inline-block rounded-full bg-primary/20 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-primary mb-6">
-              ⭐ Autoescola nº 1 da região
+              ⭐ Treinamento nº 1 da região
             </span>
             <h1 className="text-5xl md:text-7xl font-black leading-[0.95] text-secondary-foreground">
               Sua CNH<br />
               <span className="text-primary drop-shadow-[0_0_30px_oklch(0.86_0.19_95/0.6)]">com tudo de bom.</span>
             </h1>
             <p className="mt-6 text-lg text-secondary-foreground/80 max-w-lg">
-              Direção Legal é a autoescola que descomplica sua habilitação. Instrutores certificados, frota nova e aprovação garantida.
+              Direção Legal é o treinamento para habilitados que acaba com o seu medo e garante sua segurança. Instrutores certificados, frota nova e aprovação garantida.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button asChild size="lg" className="text-base font-bold h-14 px-8 shadow-[0_0_30px_oklch(0.86_0.19_95/0.5)] hover:scale-105 transition-transform">
@@ -52,7 +52,7 @@ function Index() {
             <div className="mt-10 flex gap-8">
               <div><div className="text-3xl font-black text-primary">+15k</div><div className="text-xs text-secondary-foreground/60">Alunos formados</div></div>
               <div><div className="text-3xl font-black text-primary">98%</div><div className="text-xs text-secondary-foreground/60">Aprovação</div></div>
-              <div><div className="text-3xl font-black text-primary">20</div><div className="text-xs text-secondary-foreground/60">Anos de história</div></div>
+              <div><div className="text-3xl font-black text-primary">14</div><div className="text-xs text-secondary-foreground/60">Anos de história</div></div>
             </div>
           </div>
           <div className="hidden md:block relative">
