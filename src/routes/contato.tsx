@@ -89,7 +89,7 @@ function Contato() {
 
           <div className="space-y-4">
             {[
-              { icon: MapPin, t: "Endereço", d: "Av. Brasil, 1234 — Centro, São Paulo/SP" },
+              { icon: MapPin, t: "Endereço", d: " Bairro da paz, Manaus/AM" },
               { icon: Phone, t: "Telefone", d: "(92) 9227-7979" },
               { icon: Mail, t: "E-mail", d: "contato@direcaolegal.com.br" },
               { icon: Clock, t: "Horário", d: "Seg–Sex: 8h às 20h • Sáb: 8h às 14h" },
@@ -110,7 +110,7 @@ function Contato() {
               <Button
                 variant="secondary"
                 className="mt-4 font-bold w-full"
-                onClick={() => window.open("https://wa.me/+5592922779979", "_blank")}
+                onClick={() => window.open("https://wa.me/+559292277979", "_blank")}
               >
                 Chamar no WhatsApp
               </Button>

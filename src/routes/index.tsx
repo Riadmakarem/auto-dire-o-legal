@@ -118,8 +118,8 @@ function Index() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-24 bg-background">
+      {/* TESTIMONIALS - DESATIVADO POR ENQUANTO */}
+      {/* <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-primary font-bold text-sm uppercase tracking-wider">Depoimentos</span>
@@ -144,7 +144,7 @@ function Index() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">

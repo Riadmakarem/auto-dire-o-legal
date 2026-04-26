@@ -22,7 +22,7 @@ export function SiteFooter() {
         <div>
           <h4 className="font-bold mb-4 text-primary">Contato</h4>
           <ul className="space-y-3 text-sm text-secondary-foreground/70">
-            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-primary" /> Av. Brasil, 1234 — Centro</li>
+            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-primary" /> Bairro da paz, Manaus/AM</li>
             <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /> (92) 9227-7979</li>
             <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-primary" /> contato@direcaolegal.com.br</li>
           </ul>
