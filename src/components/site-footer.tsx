@@ -1,15 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, MapPin, Phone, Mail } from "lucide-react";
+import logo from "@/assets/logo2.png";
 
 export function SiteFooter() {
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 py-16 grid gap-10 md:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary font-black text-primary-foreground">DL</div>
-            <span className="text-lg font-black">DIREÇÃO<span className="text-primary">LEGAL</span></span>
-          </div>
+          <img src={logo} alt="Direção Legal" className="h-20 w-auto mb-4" />
           <p className="text-sm text-secondary-foreground/70">Sua autoescola de confiança. Habilitação rápida, segura e descomplicada.</p>
         </div>
         <div>
@@ -25,7 +23,7 @@ export function SiteFooter() {
           <h4 className="font-bold mb-4 text-primary">Contato</h4>
           <ul className="space-y-3 text-sm text-secondary-foreground/70">
             <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-primary" /> Av. Brasil, 1234 — Centro</li>
-            <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /> (11) 99999-9999</li>
+            <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /> (92) 9227-7979</li>
             <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-primary" /> contato@direcaolegal.com.br</li>
           </ul>
         </div>

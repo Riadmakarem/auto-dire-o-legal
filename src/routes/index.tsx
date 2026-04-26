@@ -50,8 +50,7 @@ function Index() {
               </Button>
             </div>
             <div className="mt-10 flex gap-8">
-              <div><div className="text-3xl font-black text-primary">+15k</div><div className="text-xs text-secondary-foreground/60">Alunos formados</div></div>
-              <div><div className="text-3xl font-black text-primary">98%</div><div className="text-xs text-secondary-foreground/60">Aprovação</div></div>
+              <div><div className="text-3xl font-black text-primary">5k</div><div className="text-xs text-secondary-foreground/60">Alunos formados</div></div>
               <div><div className="text-3xl font-black text-primary">14</div><div className="text-xs text-secondary-foreground/60">Anos de história</div></div>
             </div>
           </div>
@@ -97,18 +96,23 @@ function Index() {
             <span className="text-primary font-bold text-sm uppercase tracking-wider">Nossos serviços</span>
             <h2 className="text-4xl md:text-5xl font-black mt-2">Categorias <span className="text-primary">de habilitação</span></h2>
           </div>
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { cat: "A", desc: "Motos" },
-              { cat: "B", desc: "Carros" },
-              { cat: "C", desc: "Caminhões" },
-              { cat: "D", desc: "Ônibus" },
-              { cat: "E", desc: "Carretas" },
+              { cat: "A", desc: "Motos", img: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&q=80" },
+              { cat: "B", desc: "Carros", img: "https://images.unsplash.com/photo-1590362891991-f776e747a588?w=800&q=80" },
+              { cat: "D", desc: "Ônibus", img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80" },
+              { cat: "E", desc: "Carretas", img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80" },
             ].map((c) => (
-              <div key={c.cat} className="group relative bg-background/5 border border-primary/20 rounded-2xl p-8 text-center hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer hover:scale-105">
-                <div className="text-6xl font-black text-primary group-hover:text-primary-foreground transition-colors">{c.cat}</div>
-                <div className="mt-2 font-medium opacity-80">{c.desc}</div>
-              </div>
+              <Link to="/servicos" key={c.cat} className="group relative overflow-hidden bg-black rounded-2xl text-center transition-all hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_oklch(0.86_0.19_95/0.4)] h-64 md:h-80 flex flex-col justify-end p-8 border border-primary/20 hover:border-primary">
+                <div className="absolute inset-0 z-0">
+                  <img src={c.img} alt={c.desc} className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" />
+                </div>
+                <div className="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                <div className="relative z-10 text-white">
+                  <div className="text-7xl font-black text-primary drop-shadow-md group-hover:text-primary-foreground transition-colors">{c.cat}</div>
+                  <div className="mt-3 text-lg font-bold opacity-90">{c.desc}</div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -37,8 +37,7 @@ function Sobre() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             {[
-              { icon: Award, n: "98%", t: "Aprovação" },
-              { icon: Users, n: "+15k", t: "Alunos" },
+              { icon: Users, n: "5k", t: "Alunos" },
               { icon: Heart, n: "20", t: "Anos" },
               { icon: Target, n: "5★", t: "Avaliação" },
             ].map((s, i) => (
@@ -64,6 +63,56 @@ function Sobre() {
               <p className="opacity-90">{v.d}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="mb-12">
+            <span className="text-primary font-bold text-sm uppercase tracking-wider">Credenciamento e Formação</span>
+            <h2 className="text-4xl md:text-5xl font-black mt-2">Formação profissional na área de <span className="text-primary">trânsito</span></h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-secondary text-secondary-foreground rounded-2xl p-8 border-2 border-primary/20">
+              <h3 className="text-2xl font-black mb-6 text-primary">Credenciamento</h3>
+              <ul className="space-y-4">
+                {[
+                  "Instrutor de Trânsito Credenciado pelo DETRAN-AM 2002",
+                  "Curso de Instrutor de Trânsito pelo DETRAN-AM 2002",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-sm md:text-base">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-secondary text-secondary-foreground rounded-2xl p-8 border-2 border-primary/20">
+              <h3 className="text-2xl font-black mb-6 text-primary">Atualizações e Cursos</h3>
+              <ul className="space-y-4">
+                {[
+                  "Cursos de Atualizações de Instrutor de Trânsito pelo DETRAN-AM",
+                  "Exame Nacional de Instrutores de Trânsito",
+                  "Curso de Atualização Nacional de Instrutores de Trânsito 2015",
+                  "Participação do 1º Fórum de Trânsito do Amazonas, 2021",
+                  "Curso de Atualização de Instrutores de Trânsito, 2021",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-sm md:text-base">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 bg-primary/10 border-2 border-primary/30 rounded-2xl p-8 text-center">
+            <p className="text-foreground">
+              Nossos instrutores mantêm <span className="font-black text-primary">formação contínua</span> e estão sempre atualizados com as mais recentes normas e técnicas de segurança no trânsito, garantindo a melhor qualidade de ensino para nossos alunos.
+            </p>
+          </div>
         </div>
       </section>
 

@@ -9,6 +9,7 @@ import { Card } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
+import { useRef } from "react";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
@@ -21,6 +22,27 @@ export const Route = createFileRoute("/contato")({
 });
 
 function Contato() {
+  const nomeRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const telRef = useRef<HTMLInputElement>(null);
+  const msgRef = useRef<HTMLTextAreaElement>(null);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const nome = nomeRef.current?.value || "";
+    const email = emailRef.current?.value || "";
+    const tel = telRef.current?.value || "";
+    const msg = msgRef.current?.value || "";
+
+    const mensagem = `Nome: ${nome}\nEmail: ${email}\nTelefone: ${tel}\n\n${msg}`;
+    const whatsappUrl = `https://wa.me/+559292277979?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(whatsappUrl, "_blank");
+    toast.success("Redirecionando para WhatsApp...");
+    (e.target as HTMLFormElement).reset();
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
@@ -39,29 +61,25 @@ function Contato() {
             <h2 className="text-2xl font-black mb-6">Envie sua mensagem</h2>
             <form
               className="space-y-4"
-              onSubmit={(e) => {
-                e.preventDefault();
-                toast.success("Mensagem enviada! Em breve entraremos em contato.");
-                (e.target as HTMLFormElement).reset();
-              }}
+              onSubmit={handleSubmit}
             >
               <div>
                 <Label htmlFor="nome">Nome</Label>
-                <Input id="nome" required placeholder="Seu nome completo" />
+                <Input id="nome" ref={nomeRef} required placeholder="Seu nome completo" />
               </div>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="email">E-mail</Label>
-                  <Input id="email" type="email" required placeholder="voce@email.com" />
+                  <Input id="email" ref={emailRef} type="email" required placeholder="voce@email.com" />
                 </div>
                 <div>
                   <Label htmlFor="tel">Telefone</Label>
-                  <Input id="tel" required placeholder="(11) 99999-9999" />
+                  <Input id="tel" ref={telRef} required placeholder="(92) 9227-7979" />
                 </div>
               </div>
               <div>
                 <Label htmlFor="msg">Mensagem</Label>
-                <Textarea id="msg" required rows={5} placeholder="Como podemos ajudar?" />
+                <Textarea id="msg" ref={msgRef} required rows={5} placeholder="Como podemos ajudar?" />
               </div>
               <Button type="submit" size="lg" className="w-full font-bold h-12 shadow-[0_0_25px_oklch(0.86_0.19_95/0.4)]">
                 Enviar mensagem
@@ -72,7 +90,7 @@ function Contato() {
           <div className="space-y-4">
             {[
               { icon: MapPin, t: "Endereço", d: "Av. Brasil, 1234 — Centro, São Paulo/SP" },
-              { icon: Phone, t: "Telefone", d: "(11) 99999-9999" },
+              { icon: Phone, t: "Telefone", d: "(92) 9227-7979" },
               { icon: Mail, t: "E-mail", d: "contato@direcaolegal.com.br" },
               { icon: Clock, t: "Horário", d: "Seg–Sex: 8h às 20h • Sáb: 8h às 14h" },
             ].map((c, i) => (
@@ -89,7 +107,13 @@ function Contato() {
             <div className="bg-primary text-primary-foreground rounded-2xl p-6">
               <div className="font-black text-xl">💬 Atendimento via WhatsApp</div>
               <p className="mt-1 opacity-90 text-sm">Resposta rápida em horário comercial.</p>
-              <Button variant="secondary" className="mt-4 font-bold w-full">Chamar no WhatsApp</Button>
+              <Button
+                variant="secondary"
+                className="mt-4 font-bold w-full"
+                onClick={() => window.open("https://wa.me/+5592922779979", "_blank")}
+              >
+                Chamar no WhatsApp
+              </Button>
             </div>
           </div>
         </div>
